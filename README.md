@@ -1,7 +1,5 @@
 # Cloud Storage with Android using the gcloud-java library #
 
-*** NON WORKABLE VERSION ****
- 
 This sample Android app shows the [gcloud-java library for Cloud Storage](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-storage) working on an Android device.
  
  
@@ -34,10 +32,13 @@ The following dependency needs to be added for proper compilation and deployment
 So, it's mandatory to exclude that dependency when adding **gcloud-java-storage** as follows:
  
  ```groovy  
-   compile ('com.google.cloud:gcloud-java-storage:0.2.1') {
+    compile ('com.google.cloud:gcloud-java-storage:0.2.1') {
         exclude group: 'com.google.api-client', module: 'google-api-client-appengine'
+        exclude group: 'com.google.guava', module: 'guava-jdk5'
     }
-   compile 'com.google.apis:google-api-services-storage:v1beta1-rev131-1.22.0'
+    compile ('com.google.apis:google-api-services-storage:v1beta1-rev131-1.22.0') {
+        exclude group: 'com.google.guava', module: 'guava-jdk5'
+    }
  ```
  
 ## Screenshots
