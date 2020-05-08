@@ -42,7 +42,7 @@ public class Main extends AppCompatActivity {
 
                     BlobId blobId = BlobId.of("bucket_rafa", "test_android");
                     BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-                    // Da error aqui de que no existe crc32, probablmente es por la exclusión
+
                     Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
                     Log.d("Main", "created blob_name: " + blob.name());
                 } catch (Exception e) {
